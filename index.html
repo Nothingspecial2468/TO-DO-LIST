@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List App</title>
+    <link rel ="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="to-do-container">
+        <header class="header">
+            <h1>To Do List</h1>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+        </header>
+
+        <div class="input-field">
+            <input type="text" id="task-input" placeholder="Enter a new task.....">
+            <!-- Can add category selection here in future -->
+            <button id="add-task-btn">Add Task</button>
+        </div>
+        
+        <div class="filter-buttons">
+            <button id="show-all" class="active">All</button>
+            <button id="show-completed">Completed</button>
+            <button id="show-pending">Pending</button>
+        </div>
+
+        <div class="search-field">
+            <input type="text" id="search-task" placeholder="&#128269;  Search tasks ....">
+        </div>
+
+        <details class="task-summary">
+            <summary>📊 Task Summary</summary>
+            <ul>
+                <li>Total Tasks: <span id="totalCount">0</span></li>
+                <li>Completed: <span id="completedCount">0</span></li>
+                <li>Pending: <span id="pendingCount">0</span></li>
+            </ul>
+        </details>
+
+        <div class="controls">
+            <label for="sort-tasks">Sort by:</label>
+            <select id="sort-tasks">
+                <option value="default">Default</option>
+                <option value="a-z">A -> Z</option>
+                <option value="z-a">Z -> A</option>
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+            </select>
+
+            <select id="task-category">
+                <option value="all">All Category</option>
+                <option value="work">Work</option>
+                <option value="study">Study</option>
+                <option value="personal">Personal</option>
+                <option value="others">Others</option>
+            </select>
+        </div>
+
+        <ul id="task-list"></ul>
+
+        <dialog id="delete-modal">
+            <p>🗑️ Are you sure you want to delete this task?</p>
+            <div class="modal-buttons">
+                <button id="confirm-delete">Yes, delete!</button>
+                <button id="cancel-delete">Cancel</button>
+            </div>
+        </dialog>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
